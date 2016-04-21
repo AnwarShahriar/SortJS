@@ -32,6 +32,7 @@ module.exports = class Sorter {
         return arr;
     }
 }
+
 var mergeSortAlg = function (arr, p, r) {
     if (p < r) {
         let q = Math.floor((p + r) / 2);
