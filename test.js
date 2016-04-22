@@ -1,4 +1,5 @@
 'use strict';
+
 let Sorter = require('./Sorter.js');
 let sorter = new Sorter();
 
