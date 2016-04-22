@@ -29,6 +29,7 @@ module.exports = class Sorter {
     
     quickSort(tobeSorted) {
         let arr = tobeSorted.slice();
+        quickSortAlg(arr, 0, arr.length - 1);
         return arr;
     }
 }
@@ -78,4 +79,30 @@ var merge = function (arr, p, q, r) {
         k++;
         j++;
     }
+};
+
+var quickSortAlg = function (arr, p, r) {
+    if (p < r) {
+        var pivot = partition(arr, p, r);
+        quickSortAlg(arr, p, pivot - 1);
+        quickSortAlg(arr, pivot + 1, r);
+    }
+};
+
+var partition = function (arr, p, r) {
+    let wall = p;
+    for(let j = p; j < r; j++) {
+        if (arr[j] <= arr[r]) {
+            swap(arr, j, wall);
+            wall++;
+        }
+    }
+    swap(arr, wall, r);
+    return wall;
+};
+
+var swap = function (arr, firstIndex, secondIndex) {
+    let temp = arr[firstIndex];
+    arr[firstIndex] = arr[secondIndex];
+    arr[secondIndex] = temp;
 };
