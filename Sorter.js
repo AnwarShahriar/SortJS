@@ -1,4 +1,5 @@
 'use strict';
+
 module.exports = class Sorter {
     bubbleSort(tobeSorted) {
         let arr = tobeSorted.slice();
@@ -34,7 +35,7 @@ module.exports = class Sorter {
     }
 }
 
-var mergeSortAlg = function (arr, p, r) {
+let mergeSortAlg = function (arr, p, r) {
     if (p < r) {
         let q = Math.floor((p + r) / 2);
         mergeSortAlg(arr, p, q);
@@ -43,7 +44,7 @@ var mergeSortAlg = function (arr, p, r) {
     }    
 };
 
-var merge = function (arr, p, q, r) {
+let merge = function (arr, p, q, r) {
     let lowHalf = [];
     let highHalf = [];
     
@@ -81,15 +82,15 @@ var merge = function (arr, p, q, r) {
     }
 };
 
-var quickSortAlg = function (arr, p, r) {
+let quickSortAlg = function (arr, p, r) {
     if (p < r) {
-        var pivot = partition(arr, p, r);
+        let pivot = partition(arr, p, r);
         quickSortAlg(arr, p, pivot - 1);
         quickSortAlg(arr, pivot + 1, r);
     }
 };
 
-var partition = function (arr, p, r) {
+let partition = function (arr, p, r) {
     let wall = p;
     for(let j = p; j < r; j++) {
         if (arr[j] <= arr[r]) {
@@ -101,7 +102,7 @@ var partition = function (arr, p, r) {
     return wall;
 };
 
-var swap = function (arr, firstIndex, secondIndex) {
+let swap = function (arr, firstIndex, secondIndex) {
     let temp = arr[firstIndex];
     arr[firstIndex] = arr[secondIndex];
     arr[secondIndex] = temp;
